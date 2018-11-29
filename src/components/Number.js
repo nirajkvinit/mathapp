@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { incrementNumber, decrementNumber } from "../actions";
 
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 
 class Number extends Component {
   render() {
@@ -38,11 +38,11 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ incrementNumber, decrementNumber }, dispatch);
-}
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ incrementNumber, decrementNumber }, dispatch);
+// }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { incrementNumber, decrementNumber }
 )(Number);
